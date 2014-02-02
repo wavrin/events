@@ -27,6 +27,11 @@
   <%= link_to "Who's Registered?", event_registrations_path(@event) %>
 
   <footer>
+    <%= register_link(@event) %>
+    <p>
+ (<%= pluralize(@event.spots_left, 'spots') %> available)
+    </p>
+
     <nav>
       <%= link_to 'Edit', edit_event_path(@event), class: 'button' %>
       <%= link_to 'Delete', @event, 
